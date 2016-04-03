@@ -22,30 +22,13 @@ angular.module('workspaceApp')
       height: function($calendar) {
         return $(window).height() - $('h1').outerHeight(true);
       },
-      eventRender : function(calEvent, $event) {
-        if (calEvent.end.getTime() < new Date().getTime()) {
-          $event.css('backgroundColor', '#aaa');
-          $event.find('.time').css({'backgroundColor': '#999', 'border':'1px solid #888'});
-        }
-      },
-      eventNew: function(calEvent, $event) {
-        console.log(calEvent);        
-      },
-      eventDrop: function(calEvent, $event) {
-        console.log(calEvent);
-      },
-      eventResize: function(calEvent, $event) {
-        console.log(calEvent);
-      },
-      eventClick: function(calEvent, $event) {
-        console.log(calEvent);
-      },
-      eventMouseover: function(calEvent, $event) {
-       console.log(calEvent);
-      },
-      eventMouseout: function(calEvent, $event) {
-        console.log(calEvent);
-      },
+      eventRender : scope.eventRender,
+      eventNew: scope.eventNew,
+      eventDrop: scope.eventDrop,
+      eventResize: scope.eventResize,
+      eventClick: scope.eventClick,
+      eventMouseover: scope.eventMouseover,
+      eventMouseout: scope.eventMouseout,
       noEvents: function() {
         console.log(calEvent);
       }
